@@ -1,0 +1,119 @@
+<html>
+
+<head>
+
+  <meta charset='utf-8' />
+
+  <style>
+
+  
+
+  </style>
+
+</head>
+
+
+
+<body style='padding: 0; margin: 0;'>
+
+  <svg style='width: 100%; height: 100%; background-color: lightgrey'>
+    <!-- <g id="g1">
+        <circle cx="150" cy="150" r="100" style="fill: orange; stroke: black"></circle>
+        <rect x=100 y=100 width=100 height=100 style="fill: blue; stroke: black; stroke-width: 5"></rect>
+    </g>
+    
+    <g id="g2" transform="">
+        <line x1=150 y1=150 x2=150 y2=500 stroke='black' stroke-width=5></line>
+        <path d="M 0 300 L 150 150 L 300 300 Z"></path>
+        <text x=300 y=300 style="font: 40px serif">THIS IS A SIGN</text>
+    </g> -->
+
+<!-- <g transform="translate(-110,-110)">
+    <circle cx="300" cy="200" r="50" style="fill: blue; stroke: blue"></circle>
+    <line x1=300 y1=200 x2=300 y2=400 stroke='blue' stroke-width=5></line>
+    <line x1=200 y1=300 x2=400 y2=300 stroke='blue' stroke-width=5></line>
+    <line x1=300 y1=400 x2=200 y2=500 stroke='blue' stroke-width=5></line>
+    <line x1=300 y1=400 x2=400 y2=500 stroke='blue' stroke-width=5></line>
+</g> -->
+    
+</svg>
+</body>
+
+
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+
+<script>
+
+data = [0, 100, 200, 300]
+
+xScale = d3.scaleLinear()
+.domain([0, 300])
+.range([100, 600])
+
+yScale = d3.scaleLinear()
+.domain([0, 300])
+.range([600, 100])
+
+d3.select('svg')
+.append('g')
+.selectAll('rec')
+.data(data)
+.enter().append('rect')
+.attr('x', d => d)
+.attr('y', d => yScale(d))
+.attr('width', 100)
+.attr('height', d => d)
+
+// d3.select('svg')
+// .append('g')
+// .selectAll('rec')
+// .data(data)
+// .enter().append('rect')
+// .attr('x', d => d)
+// .attr('y', 0)
+// .attr('width', 100)
+// .attr('height', d => d)
+
+// d3.select('svg')
+// .selectAll('circles')
+// .data(data)
+// .enter().append('circle')
+// .attr('cx', d => xScale(d))
+// .attr('cy', d => yScale(d))
+// .attr('r', 50)
+
+// d3.select('svg')
+// .selectAll('circles')
+// .data(data)
+// .enter().append('circle')
+// .attr('cx', d => d)
+// .attr('cy', d => d)
+// .attr('r', 50)
+
+// data = [0, 100, 200, 300]
+// d3.select('svg')
+// .append('circle')
+// .attr('cx', data[1])
+// .attr('cy', data[1])
+// .attr('r', 50)
+
+// data = [0, 100, 200, 300]
+// d3.select('svg')
+// .append('circle')
+// .attr('cx', data[2])
+// .attr('cy', data[2])
+// .attr('r', 50)
+
+// data = [0, 100, 200, 300]
+// d3.select('svg')
+// .append('circle')
+// .attr('cx', data[3])
+// .attr('cy', data[3])
+// .attr('r', 50)
+
+</script>
+
+</html>
